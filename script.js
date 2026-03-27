@@ -149,13 +149,10 @@ form.addEventListener('submit', async (e) => {
         // Success - Show success message briefly then redirect
         showMessage('Access granted! Redirecting to your report...', 'success');
         
+            setTimeout(() => {
             // Open Google Drive link in new tab
-            const newTab = window.open('', '_blank'); // open immediately
-
-setTimeout(() => {
-    newTab.location.href = pupilDatabase[key];
-    setLoading(false);
-}, 1000);
+            window.open(pupilDatabase[key], '_blank');
+            setLoading(false);
             
             // Reset form after successful access
             setTimeout(() => {
